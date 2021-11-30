@@ -14,8 +14,7 @@ class HomeController extends Controller
      */
     public function showHome()
     {
-        print("dit is de test voor Home");
-        // return view('Home.show');
+        return view('home');
     }
 
 }
