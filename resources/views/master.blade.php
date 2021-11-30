@@ -6,48 +6,36 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  
   <div class="hero">
     <nav>
-      <img src="images/menu.png" class="menu-img">
-      <img src="images//logo.png" class="logo">
-      <ul>
-        <li><a href="">Latest</a>></li>
-        <li><a href="">Modern</a>></li>
-        <li><a href="">Contemporary</a>></li>
-        <li><a href="">Affordable</a>></li>
-      </ul>
-      <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
-    </nav>
-  
-    @yield("content")
-    <div class="lampcontainer">
-      <img src="images/lamp.png" class="lamp">
-      <img src="images/light.png" class="light" id="light">
-    </div>
-
-    <div class="text-container">
-      <h1>Latest<br>in Lighting</h1>
-      <p>
-        This is the first lamp from our company. We're making a huge collection of modern Lamps in all categories from home use to office use.
-      </p>
-      <a href="">Check All Collections</a>
-      <div class="control">
-        <p>04</p>
-        <div class="line"><span></span></div>
-        <p>05</p>
+      {{-- BEGIN menu --}}
+      <div class='menu'>
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="#"><li>Home</li></a>
+              <a href="#"><li>Activiteiten</li></a>
+              <a href="#"><li>Kampterreinen</li></a>
+              <a href="#"><li>Lokalenverhuur</li></a>
+              <a href="#"><li>Materiaal</li></a>
+              <a href="#"><li>Info & Contact</li></a>
+              <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </div>
+      {{-- END menu --}}
+      <img src="images/logo2.png" class="logo-img">
+      @yield("tab_headers")
+    </nav>
+    @yield("content")
   </div>
 
-
-
-<script>
-  var btn = document.getElementById("btn");
-  var light = document.getElementById("light");
-  function toggleBtn(){
-    btn.classList.toggle("active")
-    light.classList.toggle("on")
-  }
-</script>
+<script src=functies.js></script>
 </body>
 </html>
