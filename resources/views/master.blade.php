@@ -10,6 +10,9 @@
   <div class="hero">
     <nav>
       {{-- BEGIN menu --}}
+      <!--    Made by Erik Terwan    -->
+      <!--   24th of November 2015   -->
+      <!--        MIT License        -->
       <div class='menu'>
         <nav role="navigation">
           <div id="menuToggle">
@@ -30,7 +33,7 @@
         </nav>
       </div>
       {{-- END menu --}}
-      <img src="images/logo2.png" class="logo-img">
+      <img src="images/logo2.png" class="logo-img"> {{-- source img: https://www.youth-movement.org --}}
       @yield("tab_headers")
     </nav>
     @yield("content")

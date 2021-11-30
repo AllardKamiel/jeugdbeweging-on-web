@@ -5,6 +5,11 @@ html * {
     box-sizing: border-box;
 }
 /* BEGIN MENU STYLE */
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ */
 .menu body {
     background: #232323;
     color: #cdcdcd;
