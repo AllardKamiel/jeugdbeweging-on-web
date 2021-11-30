@@ -44,7 +44,7 @@ html * {
     position: absolute;
     top: -7px;
     left: -5px;
-
+    margin-left: -150px; /*same as hamburger*/
     cursor: pointer;
 
     opacity: 0; /* hide this */
