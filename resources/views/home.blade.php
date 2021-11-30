@@ -1,5 +1,5 @@
 @extends("master")
-@section("subtitle","home")
+@section("subtitle","Home")
 
 @section("tab_headers")
 <ul>
