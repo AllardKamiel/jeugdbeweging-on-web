@@ -22,10 +22,10 @@
             <span></span>
             <ul id="menu">
               <a href="#"><li>Home</li></a>
-              <a href="#"><li>Activiteiten</li></a>
-              <a href="#"><li>Kampterreinen</li></a>
-              <a href="#"><li>Lokalenverhuur</li></a>
-              <a href="#"><li>Materiaal</li></a>
+              <a href="/activiteit"><li>Activiteiten</li></a>
+              <a href="/kampterrein"><li>Kampterreinen</li></a>
+              <a href="/lokaal"><li>Lokalenverhuur</li></a>
+              <a href="/materiaal"><li>Materiaal</li></a>
               <a href="#"><li>Info & Contact</li></a>
               <a href="https://www.uhasselt.be/" target="_blank"><li>Show me more</li></a>
             </ul>
