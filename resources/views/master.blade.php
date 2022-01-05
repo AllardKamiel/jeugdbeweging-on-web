@@ -4,6 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JOW - @yield('subtitle')</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="functies.js"></script>
+  <link rel="shortcut icon" href="images/logo2small.png" />
 </head>
 <body>
   
@@ -21,8 +24,9 @@
             <span></span>
             <span></span>
             <ul id="menu">
-              <a href="#"><li>Home</li></a>
+              <a href="/home"><li>Home</li></a>
               <a href="#"><li>Activiteiten</li></a>
+              <a href="/themazoeker"><li>Thema zoeker</li></a>
               <a href="#"><li>Kampterreinen</li></a>
               <a href="#"><li>Lokalenverhuur</li></a>
               <a href="#"><li>Materiaal</li></a>

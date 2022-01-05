@@ -7,7 +7,7 @@ use App\Http\Controllers\ActiviteitController;
 use App\Http\Controllers\KampterreinController;
 use App\Http\Controllers\LokaalController;
 use App\Http\Controllers\MateriaalController;
-use App\Http\Controllers\GeneratorController;
+use App\Http\Controllers\ThemaZoekerController;
 
 
 
@@ -33,4 +33,4 @@ Route::get('/activiteit', [ActiviteitController::class , 'showActiviteit']);
 Route::get('/kampterrein', [KampterreinController::class , 'showKampterrein']);
 Route::get('/lokaal', [LokaalController::class , 'showLokaal']);
 Route::get('/materiaal', [MateriaalController::class, 'showMateriaal']);
-Route::get('/generator', [GeneratorController::class, 'showGenerator']);
+Route::get('/themazoeker', [ThemaZoekerController::class, 'show']);
