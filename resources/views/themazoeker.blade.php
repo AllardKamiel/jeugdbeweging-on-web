@@ -9,7 +9,7 @@
 @stop
 
 @section("content")
-<div style="margin-left: 50px;">
+<div style="margin-left: 100px;">
   <h1>Hier kan je een leuk thema zoeken, of er zelf een toevoegen &#128512;</h1>
   <div style="margin-top: 30px;">
     <p>Vul hieronder het aantal themas waardoor je je wil laten inspireren</p>
@@ -18,7 +18,7 @@
     <p id="themazoeker_result" style="color: red;margin-top: 4px;">Hier komen de themas tevoorschijn!</p>
   </div>
 </div>
-<div style="margin-left: 50px;margin-top: 50px;">
+<div style="margin-left: 100px;margin-top: 50px;">
   <a id="voegtoe-anchor" ><h2>Toevoegen</h2></a>
   <div style="margin-top: 30px;">
     <p>Vul het veld hieronder in om een thema toe te voegen</p>
