@@ -34,3 +34,4 @@ Route::get('/kampterrein', [KampterreinController::class , 'showKampterrein']);
 Route::get('/lokaal', [LokaalController::class , 'showLokaal']);
 Route::get('/materiaal', [MateriaalController::class, 'showMateriaal']);
 Route::get('/themazoeker', [ThemaZoekerController::class, 'show']);
+Route::get('/materiaal/{materiaalnaam}', [MateriaalController::class, 'show']);
