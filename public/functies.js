@@ -8,6 +8,7 @@ function setStatus(id, msg) {
   document.getElementById(id).innerHTML = msg;
 }
 
+//THEMA ZOEKER
 function zoekThema() {
   var aantal = parseInt(document.getElementById("themazoeker_aantal").value);
   axios.get("http://localhost:8088/api/themas/" + aantal, {
@@ -27,12 +28,13 @@ function zoekThema() {
     },
       (error) => {
         console.log(error);
-      })
+      });
 }
 
 function opslaanThema() {
-  var thema_text = parseInt(document.getElementById("themazoeker_text").value);
+  var thema_text = String(document.getElementById("themazoeker_text").value);
   var id = "themazoeker_status";
+<<<<<<< HEAD
   axios.post("http://localhost:8088/api/themas", {
     method: 'POST',
     mode: 'no-cors',
@@ -163,3 +165,26 @@ function ActiviteitDetail(row_number) {
   var page = 'http://127.0.0.1:8000/activiteit_detail';
   window.open(page, "_blank").focus();
  }
+=======
+  const json = JSON.stringify({
+    "content": thema_text
+  });
+  if (thema_text != "") {
+    //console.log(json);
+    axios.post("http://localhost:8088/api/themas", json, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        console.log(response.status);
+        setStatus(id, response.status);
+      },
+        (error) => {
+          console.log(error);
+        });
+  }
+}
+>>>>>>> 8a370d5d87a843ea0626e9a919d7eb8fed0583f7
