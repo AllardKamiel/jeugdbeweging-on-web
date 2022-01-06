@@ -34,7 +34,6 @@ function zoekThema() {
 function opslaanThema() {
   var thema_text = String(document.getElementById("themazoeker_text").value);
   var id = "themazoeker_status";
-<<<<<<< HEAD
   axios.post("http://localhost:8088/api/themas", {
     method: 'POST',
     mode: 'no-cors',
@@ -56,6 +55,8 @@ function opslaanThema() {
 
 
 
+var Activity_list = [];
+
 function zoekActiviteit(){
   var title = document.getElementById("zoekActiviteit_title").value;
   if (title == ""){
@@ -72,7 +73,6 @@ function zoekActiviteit(){
   var pers_max = parseInt(document.getElementById("zoekActiviteit_pers_max").value);
 
   var service = "http://localhost:5000/api/";
-  var Activity_list = [];
   $(document).ready(function(){
 
       jQuery.support.cors = true;
@@ -88,6 +88,7 @@ function zoekActiviteit(){
           success: function (data) {
           $("#activiteit_table tbody tr").remove();   
           var trHTML = '';
+          
           
             
           $.each(data, function (key, value) {
@@ -128,8 +129,8 @@ function zoekActiviteit(){
               Activity.push(extra_assets);
 
               Activity_list.push(Activity);
+              localStorage.setItem("activities", JSON.stringify(Activity_list));
           });
-          
           $('#activiteit_table').append(trHTML);
           addRowHandlers() 
           },
@@ -153,38 +154,86 @@ function addRowHandlers() {
   }
  }
 
+
+ var row_number
 function createClickHandler(row) {
   return function() { 
-    var row_number = row.rowIndex ;
-    ActiviteitDetail(row_number);
+    row_number = row.rowIndex ;
+    localStorage.setItem("row", JSON.stringify(row_number));
+    ActiviteitDetail();
   };
 }
 
 
-function ActiviteitDetail(row_number) {
+function ActiviteitDetail() {
   var page = 'http://127.0.0.1:8000/activiteit_detail';
   window.open(page, "_blank").focus();
  }
-=======
-  const json = JSON.stringify({
-    "content": thema_text
-  });
-  if (thema_text != "") {
-    //console.log(json);
-    axios.post("http://localhost:8088/api/themas", json, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then((response) => {
-        console.log(response.status);
-        setStatus(id, response.status);
-      },
-        (error) => {
-          console.log(error);
-        });
+
+
+ function fillActiviteitDetail(){
+  var activities = JSON.parse(localStorage.getItem("activities"));
+  var row = JSON.parse(localStorage.getItem("row"));
+  document.getElementById("titel").innerHTML = "titel:"+activities[row-1][1];
+  document.getElementById("duration").innerHTML = "duration:"+ activities[row-1][3] + "min";
+  document.getElementById("age_min").innerHTML = "minimum leeftijd:"+activities[row-1][4]
+  document.getElementById("age_max").innerHTML = "maximum leeftijd:"+activities[row-1][5]
+  document.getElementById("pers_min").innerHTML = "minimum aantal personen:"+activities[row-1][6]
+  document.getElementById("pers_max").innerHTML = "maximum aantal personen:"+activities[row-1][7]
+  document.getElementById("setting_tag").innerHTML = "waar:"+activities[row-1][9]
+  document.getElementById("thema_tag1").innerHTML = "thema:"+activities[row-1][10]
+  document.getElementById("thema_tag2").innerHTML = "thema:"+activities[row-1][11]
+  document.getElementById("thema_tag3").innerHTML = "thema:"+activities[row-1][12]
+  document.getElementById("links").innerHTML = "link:"+activities[row-1][13]
+  document.getElementById("extra_assets").innerHTML = "extra_assets:"+activities[row-1][14]
+  document.getElementById("matriaallijst").innerHTML = "matriaallijst:"+activities[row-1][8]
+  document.getElementById("beschrijving").innerHTML = "beschrijving:"+activities[row-1][2]
+  
+ }
+ function voegToeActiviteit(){
+   titel = document.getElementById("voegToeActiviteit_title").value
+   thema1 = document.getElementById("voegToeActiviteit_thema_tag1").value
+   thema2 = document.getElementById("voegToeActiviteit_thema_tag2").value
+   thema3 = document.getElementById("voegToeActiviteit_thema_tag3").value
+   settin_tag = document.getElementById("voegToeActiviteit_setting_tag").value
+   age_min =parseInt(document.getElementById("voegToeActiviteit_age_min").value) 
+   age_max = parseInt(document.getElementById("voegToeActiviteit_age_max").value)
+   pers_min = parseInt(document.getElementById("voegToeActiviteit_pers_min").value)
+   pers_max = parseInt(document.getElementById("voegToeActiviteit_pers_max").value)
+   description = document.getElementById("voegToeActiviteit_beschrijving").value
+   duration = parseInt(document.getElementById("voegToeActiviteit_duration").value)
+   links = document.getElementById("voegToeActiviteit_links").value
+   materiaallijst = document.getElementById("voegToeActiviteit_matriaallijst").value
+   extra_assets = document.getElementById("voegToeActiviteit_extra_assets").value
+
+  var json = {
+    "age_max": age_min,
+    "age_min": age_max,
+    "description": description,
+    "duration": duration,
+    "extra_assets": extra_assets,
+    "links": links,
+    "material_list": materiaallijst,
+    "pers_max": pers_max,
+    "pers_min": pers_min,
+    "setting_tag": settin_tag,
+    "thema_tag_1": thema1,
+    "thema_tag_2": thema2,
+    "thema_tag_3": thema3,
+    "title": titel
   }
+
+  jQuery.support.cors = true;
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:5000/api/activity",
+    // The key needs to match your method's input parameter (case-sensitive).
+    data: JSON.stringify(json),
+    contentType: "application/json;",
+    dataType: "json",
+    success: function(data){alert(data);},
+    error: function(errMsg) {
+        alert(errMsg);
+    }
+});
 }
->>>>>>> 8a370d5d87a843ea0626e9a919d7eb8fed0583f7

@@ -24,4 +24,9 @@ class ActiviteitController extends Controller
             //print("dit is de test voor Activiteit");
             return view('activiteitenDetail');
         }
+        public function showActiviteitVoegToe()
+        {
+            //print("dit is de test voor Activiteit");
+            return view('activiteitenVoegToe');
+        }
 }

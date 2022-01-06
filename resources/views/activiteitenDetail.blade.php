@@ -3,28 +3,25 @@
 
 
 @section("content")
+<body onload="fillActiviteitDetail()">
 <div style="margin-left: 50px;">
   <h1>Activiteit detail &#128512;</h1>
   <div style="margin-top: 30px;">
-    <p>titel</p>
-    <input  style="margin-top: 4px;" type="text" name="title" id="zoekActiviteit_title" placeholder="zoeken op titel" /><br>
-    <p>thema</p>
-    <input  style="margin-top: 4px;" type="text" name="thema_tag" id="zoekActiviteit_thema_tag" placeholder="zoeken op thema" /><br>
-    <p>setting</p>
-    <select  style="margin-top: 4px;" name="setting_tag" id="zoekActiviteit_setting_tag">
-        <option value="binnen">binnen</option>
-        <option value="buiten">buiten</option>
-        <option value="beide">beide</option>
-    </select><br>
-    <p>minimum leeftijd</p>
-    <input  style="margin-top: 4px;" type="number" name="age_min" id="zoekActiviteit_age_min" value="0" /><br>
-    <p>maximum leeftijd</p>
-    <input  style="margin-top: 4px;" type="number" name="age_max" id="zoekActiviteit_age_max" value="100" /><br>
-    <p>minimum aantal personen</p>
-    <input  style="margin-top: 4px;" type="number" name="pers_min" id="zoekActiviteit_pers_min" value="0" /><br>
-    <p>maximum aantal personen</p>
-    <input  style="margin-top: 4px;" type="number" name="pers_max" id="zoekActiviteit_pers_max" value="100" /><br>
-    <button style="margin-top: 4px;" type="button" onclick="zoekActiviteit()">zoek</button>
+  <p id="titel"></p>
+  <p id="duration"></p>
+  <p id="age_min">Hello World!</p>
+  <p id="age_max">Hello World!</p>
+  <p id="pers_min">Hello World!</p>
+  <p id="pers_max">Hello World!</p>
+  <p id="setting_tag">Hello World!</p>
+  <p id="thema_tag1">Hello World!</p>
+  <p id="thema_tag2">Hello World!</p>
+  <p id="thema_tag3">Hello World!</p>
+  <p id="links">Hello World!</p>
+  <p id="extra_assets">Hello World!</p>
+
+  <p id="matriaallijst">Hello World!</p>
+  <p id="beschrijving">Hello World!</p>
 
 
   </div>

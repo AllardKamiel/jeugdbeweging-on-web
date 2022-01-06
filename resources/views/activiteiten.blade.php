@@ -1,6 +1,11 @@
 @extends("master")
 @section("subtitle","Home")
 
+@section("tab_headers")
+<ul style="margin-right: 10%;">
+  <li><a href="/activiteit_voegToe">Voeg activiteit toe</a></li>
+</ul>
+@stop
 
 @section("content")
 <div style="margin-left: 50px;">
