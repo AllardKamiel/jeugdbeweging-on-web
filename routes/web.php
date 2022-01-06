@@ -34,6 +34,6 @@ Route::get('/activiteit_detail', [ActiviteitController::class , 'showActiviteitD
 Route::get('/activiteit_voegToe', [ActiviteitController::class , 'showActiviteitVoegToe']);
 Route::get('/kampterrein', [KampterreinController::class , 'showKampterrein']);
 Route::get('/lokaal', [LokaalController::class , 'showLokaal']);
-Route::get('/materiaal', [MateriaalController::class, 'showMateriaal']);
+Route::get('/materiaal', [MateriaalController::class, 'show']);
 Route::get('/themazoeker', [ThemaZoekerController::class, 'show']);
-Route::get('/materiaal/{materiaalnaam}', [MateriaalController::class, 'show']);
+Route::get('/materiaal/{materiaalnaam}', [MateriaalController::class, 'showMateriaal']);

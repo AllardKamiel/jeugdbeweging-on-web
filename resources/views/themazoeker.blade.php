@@ -1,5 +1,5 @@
 @extends("master")
-@section("subtitle","Home")
+@section("subtitle","Thema zoeker")
 
 @section("tab_headers")
 <ul style="margin-right: 10%;">
