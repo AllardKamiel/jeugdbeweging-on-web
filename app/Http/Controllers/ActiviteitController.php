@@ -16,7 +16,12 @@ class ActiviteitController extends Controller
          */
         public function showActiviteit()
         {
-            print("dit is de test voor Activiteit");
-            // return view('Activiteit.show');s
+            //print("dit is de test voor Activiteit");
+            return view('activiteiten');
+        }
+        public function showActiviteitDetail()
+        {
+            //print("dit is de test voor Activiteit");
+            return view('activiteitenDetail');
         }
 }
