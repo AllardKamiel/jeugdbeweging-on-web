@@ -5,8 +5,21 @@
   <title>JOW - @yield('subtitle')</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="functies.js"></script>
   <link rel="shortcut icon" href="images/logo2small.png" />
+  <style>
+    th, td {
+    background-color: #00986f;
+    border-style:solid;
+    border-color: #fff;
+    padding: 5px;
+    }
+    table.center {
+    margin-left: auto; 
+    margin-right: auto;
+    }
+</style>
 </head>
 <body>
   
@@ -25,7 +38,7 @@
             <span></span>
             <ul id="menu">
               <a href="/home"><li>Home</li></a>
-              <a href="#"><li>Activiteiten</li></a>
+              <a href="/activiteit"><li>Activiteiten</li></a>
               <a href="/themazoeker"><li>Thema zoeker</li></a>
               <a href="#"><li>Kampterreinen</li></a>
               <a href="#"><li>Lokalenverhuur</li></a>

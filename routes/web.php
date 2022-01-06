@@ -30,6 +30,8 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class , 'showHome']);
 Route::get('/activiteit', [ActiviteitController::class , 'showActiviteit']);
+Route::get('/activiteit_detail', [ActiviteitController::class , 'showActiviteitDetail']);
+Route::get('/activiteit_voegToe', [ActiviteitController::class , 'showActiviteitVoegToe']);
 Route::get('/kampterrein', [KampterreinController::class , 'showKampterrein']);
 Route::get('/lokaal', [LokaalController::class , 'showLokaal']);
 Route::get('/materiaal', [MateriaalController::class, 'showMateriaal']);
