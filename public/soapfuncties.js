@@ -34,7 +34,7 @@ function zoekMateriaal() {
     fotolink: fotolink,
     query: query
   };
-  fetch("http://localhost:8000/SOAPpostXML.php", {
+  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
