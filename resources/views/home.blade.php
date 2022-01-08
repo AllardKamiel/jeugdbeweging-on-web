@@ -13,7 +13,7 @@
 <h1 style="margin-left:50px">This is the home page</h1>
 
 <div class="text-container">
-  <h1>Latest<br>in Lighting</h1>
+  <h1>Jeugdbeweging<br>on Web</h1>
   <p>
     This is the first lamp from our company. We're making a huge collection of modern Lamps in all categories from home use to office use.
   </p>

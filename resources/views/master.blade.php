@@ -8,7 +8,9 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{ asset('functies.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('soapfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/activiteitenfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/themafuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/materiaalfuncties.js') }}"></script>
   <link rel="shortcut icon" href="{{ asset('images/logo2small.png') }}" />
   <style>
     th, td {

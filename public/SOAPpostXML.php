@@ -29,7 +29,7 @@ $client = new SoapClient($url);
 $msg = $client->getLijstMateriaal(array('naam'=>"Test",'locatie'=>"Test",'prijsperdag'=>-2,'contactinfo'=>"TestC",'beschikbaar'=>-1,'fotolink'=>"TestF",));
 
 $lala = $msg->getLijstMateriaalResult;
-$return="$naam + $query + $lala";
+$return= $lala;
 
 $result = ["uitkomst" => $return];
 
