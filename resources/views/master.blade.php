@@ -46,9 +46,8 @@
               <a href="/activiteitCalender"><li>Kalender</li></a>
               <a href="/themazoeker"><li>Thema zoeker</li></a>
               <a href="#"><li>Kampterreinen</li></a>
-              <a href="#"><li>Lokalenverhuur</li></a>
               <a href="/materiaal"><li>Materiaal</li></a>
-              <a href="#"><li>Info & Contact</li></a>
+              <a href="#" onclick="window.open('mailto:arne.duyver@student.uhasselt.be?Subject=Jeugdbeweging On Web: Support','','200','200');"><li>Info & Contact</li></a>
               <a href="https://www.uhasselt.be/" target="_blank"><li>Show me more</li></a>
             </ul>
           </div>
