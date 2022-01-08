@@ -10,7 +10,7 @@
 
 @section("content")
 <h1 style="margin-left:100px">Aan allen die gekomen zijn proficiat ...</h1>
-<p style="margin-left:100px">Aan allen die niet gekomen zijn, breng ze hiernaartoe</p>
+<p style="margin-left:100px">Aan allen die niet gekomen zijn, breng ze hiernaartoe!</p>
 
 <div class="row">
   <div class="column left">
