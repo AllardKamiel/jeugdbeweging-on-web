@@ -41,6 +41,7 @@
             <ul id="menu">
               <a href="/home"><li>Home</li></a>
               <a href="/activiteit"><li>Activiteiten</li></a>
+              <a href="/activiteitCalender"><li>Kalender</li></a>
               <a href="/themazoeker"><li>Thema zoeker</li></a>
               <a href="#"><li>Kampterreinen</li></a>
               <a href="#"><li>Lokalenverhuur</li></a>

@@ -14,16 +14,11 @@ class ActiviteitCalenderController extends Controller
 
          * @return \Illuminate\Http\Response
          */
-        public function showActiviteit()
+        public function showActiviteitCalender()
         {
             return view('activiteitenCalender');
         }
-        public function showActiviteitDetail()
-        {
-            //print("dit is de test voor Activiteit");
-            return view('activiteitenCalenderDetail');
-        }
-        public function showActiviteitVoegToe()
+        public function showActiviteitCalenderVoegToe()
         {
             //print("dit is de test voor Activiteit");
             return view('activiteitenCalenderVoegToe');

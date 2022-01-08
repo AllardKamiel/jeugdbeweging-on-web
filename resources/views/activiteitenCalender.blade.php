@@ -3,43 +3,44 @@
 
 @section("tab_headers")
 <ul style="margin-right: 10%;">
-  <li><a href="/activiteit_voegToe">Voeg activiteit toe</a></li>
+  <li><a href="/activiteitCalender_voegToe">Voeg activiteit toe</a></li>
 </ul>
 @stop
 
 @section("content")
 <div style="margin-left: 50px;">
-  <h1>Doorzoek activiteiten om te spelen of voeg een activiteit toe &#128512;</h1>
+  <h1>activiteiten kalender &#128512;</h1>
   <div style="margin-top: 30px;">
     <p>titel</p>
-    <input  style="margin-top: 4px;" type="text" name="title" id="zoekActiviteit_title" placeholder="zoeken op titel" /><br>
+    <input  style="margin-top: 4px;" type="text" name="title" id="zoekActiviteitCalender_title" placeholder="zoeken op titel" /><br>
     <p>thema</p>
-    <input  style="margin-top: 4px;" type="text" name="thema_tag" id="zoekActiviteit_thema_tag" placeholder="zoeken op thema" /><br>
-    <p>setting</p>
-    <select  style="margin-top: 4px;" name="setting_tag" id="zoekActiviteit_setting_tag">
-        <option value="binnen">binnen</option>
-        <option value="buiten">buiten</option>
-        <option value="beide">beide</option>
+    <input  style="margin-top: 4px;" type="date" name="thema_tag" id="zoekActiviteitCalender_datum"/><br>
+    <p>groep</p>
+    <select  style="margin-top: 4px;" name="groep" id="zoekActiviteitCalender_groep">
+        <option value=""> -- select an option -- </option>
+        <option value="Scouts Peer">Scouts Peer</option>
+        <option value="Scouts Hamont">Scouts Hamont</option>
+        <option value="Chiro Grote-Brogel">Chiro Grote-Brogel</option>
     </select><br>
-    <p>minimum leeftijd</p>
-    <input  style="margin-top: 4px;" type="number" name="age_min" id="zoekActiviteit_age_min" value="0" /><br>
-    <p>maximum leeftijd</p>
-    <input  style="margin-top: 4px;" type="number" name="age_max" id="zoekActiviteit_age_max" value="100" /><br>
-    <p>minimum aantal personen</p>
-    <input  style="margin-top: 4px;" type="number" name="pers_min" id="zoekActiviteit_pers_min" value="0" /><br>
-    <p>maximum aantal personen</p>
-    <input  style="margin-top: 4px;" type="number" name="pers_max" id="zoekActiviteit_pers_max" value="100" /><br>
-    <button style="margin-top: 4px;" type="button" onclick="zoekActiviteit()">zoek</button>
+    <p>subgroep</p>
+    <select  style="margin-top: 4px;" name="subgroep" id="zoekActiviteitCalender_subgroep">
+        <option value=""> -- select an option -- </option>
+        <option value="Givers">Givers</option>
+        <option value="Jong givers">Jong givers</option>
+        <option value="Kawelpen">Kawelpen</option>
+    </select><br>
 
-    <table id="activiteit_table" class="center">
+    <button style="margin-top: 4px;" type="button" onclick="zoekActiviteitCalender()">zoek</button>
+
+    <table id="activiteit_calender_table" class="center">
         <thead>
             <tr>
                 <th>Titel</th>
-                <th>Beschrijving</th>
-                <th>Min aantal personen</th>
-                <th>Max aantal personen</th>
-                <th>Min leeftijd</th>
-                <th>Max leeftijd</th>
+                <th>Datum</th>
+                <th>Start uur</th>
+                <th>Eind uur</th>
+                <th>Groep</th>
+                <th>Sub groep</th>
             </tr>
         </thead>
     </table>

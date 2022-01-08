@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 //controllers
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ActiviteitController;
+use App\Http\Controllers\ActiviteitCalenderController;
 use App\Http\Controllers\KampterreinController;
 use App\Http\Controllers\LokaalController;
 use App\Http\Controllers\MateriaalController;
@@ -32,6 +33,8 @@ Route::get('/home', [HomeController::class , 'showHome']);
 Route::get('/activiteit', [ActiviteitController::class , 'showActiviteit']);
 Route::get('/activiteit_detail', [ActiviteitController::class , 'showActiviteitDetail']);
 Route::get('/activiteit_voegToe', [ActiviteitController::class , 'showActiviteitVoegToe']);
+Route::get('/activiteitCalender', [ActiviteitCalenderController::class , 'showActiviteitCalender']);
+Route::get('/activiteitCalender_voegToe', [ActiviteitCalenderController::class , 'showActiviteitCalenderVoegToe']);
 Route::get('/kampterrein', [KampterreinController::class , 'showKampterrein']);
 Route::get('/lokaal', [LokaalController::class , 'showLokaal']);
 Route::get('/materiaal', [MateriaalController::class, 'show']);
