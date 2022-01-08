@@ -40,10 +40,45 @@ function zoekMateriaal() {
     body: JSON.stringify(content)
   })
     .then(response => response.json())
-    .then(json => console.log(json.uitkomst))
+    .then(json => {
+      data = json.uitkomst;
+      vulMateriaalTabel(data);
+    })
     .catch(err => alert(err));
+}
 
-  //   var id = "materiaalzoeker_result";
-  //   setStatus(id, "Hello there");
-  //   document.getElementById(id).style.color = "#fff";
+var Materiaal_list = [];
+
+function vulMateriaalTabel(data) {
+  $(document).ready(function () {
+
+    $("#materiaal_table tbody tr").remove();
+    var trHTML = '';
+    data = JSON.parse(data);
+    console.log(data);
+    $.each(data, function (key, value) {
+      trHTML += '<tbody><tr style="cursor:pointer"><td>' + value.Naam + '</td><td>' + value.Locatie + '</td><td>' + value.Prijsperdag + '</td><td>' + value.Contactinfo + '</td><td>' + value.Beschikbaar + '</td><td><a href="' + value.Fotolink + '" target="_blank"><img src=' + value.Fotolink + ' alt="Image" height="42" width="42"></a></td></tr></tbody>';
+      materiaalNaam = value.Naam;
+      materiaalLocatie = value.Locatie;
+      materiaalPrijsperdag = value.Prijsperdag;
+      materiaalContactinfo = value.Contactinfo;
+      materiaalBeschikbaar = value.Beschikbaar;
+      materiaalFotolink = value.Fotolink;
+      console.log(materiaalNaam + " Woehoe")
+      let Materiaal = [];
+      Materiaal.push(materiaalNaam);
+      Materiaal.push(materiaalLocatie);
+      Materiaal.push(materiaalPrijsperdag);
+      Materiaal.push(materiaalContactinfo);
+      Materiaal.push(materiaalBeschikbaar);
+      Materiaal.push(materiaalFotolink);
+
+      Materiaal_list.push(Materiaal);
+
+      localStorage.setItem("materialen", JSON.stringify(Materiaal_list));
+
+    });
+    $('#materiaal_table').append(trHTML);
+    // addRowHandlersMateriaal()
+  })
 }
