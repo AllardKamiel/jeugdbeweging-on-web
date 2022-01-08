@@ -26,14 +26,34 @@ $port = "8054";
 
 $url = "http://localhost:$port/SOAPMateriaal.asmx";
 $client = new SoapClient($url);
-$msg = $client->getLijstMateriaal(array('naam'=>"Test",'locatie'=>"Test",'prijsperdag'=>-2,'contactinfo'=>"TestC",'beschikbaar'=>-1,'fotolink'=>"TestF",));
+if($query == "getLijstMateriaal"){
+  $msg = $client->getLijstMateriaal(array('naam'=>"$naam",'locatie'=>"$locatie",'beschikbaar'=>$beschikbaar));
+  $jsonResult = $msg->getLijstMateriaalResult;
+}
+if($query == "huurMateriaal"){
+  $msg = $client->huurMateriaal(array('userNaam'=>"$usernaam",'naam'=>"$naam",'locatie'=>"$locatie",'aantal'=>$aantal));
+  $jsonResult = $msg->huurMateriaalResult;
+}
+if($query == "brengMateriaalTerug"){
+  $msg = $client->brengMateriaalTerug(array('userNaam'=>"$usernaam",'naam'=>"$naam",'locatie'=>"$locatie",'aantal'=>$aantal));
+  $jsonResult = $msg->brengMateriaalTerugResult;
+}
 
-$lala = $msg->getLijstMateriaalResult;
-$return= $lala;
+if($query == "voegMateriaalToe"){
+  $msg = $client->voegMateriaalToe(array('naam'=>"$naam",'locatie'=>"$locatie",'prijsperdag'=>"$prijsperdag",'contactinfo'=>"$contactinfo",'beschikbaar'=>$beschikbaar,'fotolink'=>$fotolink));
+  $jsonResult = $msg->voegMateriaalToeResult;
+}
+
+if($query == "toonGehuurdMateriaal"){
+  $msg = $client->toonGehuurdMateriaal(array('userNaam'=>"$usernaam"));
+  $jsonResult = $msg->toonGehuurdMateriaalResult;
+}
+
+
+$return= $jsonResult;
+
 
 $result = ["uitkomst" => $return];
-
-
 print(json_encode($result));
 
 ?>
