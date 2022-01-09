@@ -50,6 +50,17 @@
               <a href="/materiaal"><li>Materiaal</li></a>
               <a href="#" onclick="window.open('mailto:arne.duyver@student.uhasselt.be?Subject=Jeugdbeweging On Web: Support','','200','200');"><li>Info & Contact</li></a>
               <a href="https://www.uhasselt.be/" target="_blank"><li>Show me more</li></a>
+              <a><li>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                
+                  <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                      {{ __('Log Out') }}
+                  </x-jet-responsive-nav-link>
+                </form>
+              </li></a>
             </ul>
           </div>
         </nav>
