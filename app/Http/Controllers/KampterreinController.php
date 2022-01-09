@@ -15,7 +15,6 @@ class KampterreinController extends Controller
     */
     public function showKampterrein()
     {
-        print("dit is de test voor Kampterrein");
-        // return view('Kampterrein.show');
+       return view('kampterreinen');
     }
 }

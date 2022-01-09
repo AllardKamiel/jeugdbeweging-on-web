@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{ asset('functies.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/activiteitenfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/kampterreinfuncties.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/themafuncties.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/materiaalfuncties.js') }}"></script>
   <link rel="shortcut icon" href="{{ asset('images/logo2small.png') }}" />
@@ -45,7 +46,7 @@
               <a href="/activiteit"><li>Activiteiten</li></a>
               <a href="/activiteitCalender"><li>Kalender</li></a>
               <a href="/themazoeker"><li>Thema zoeker</li></a>
-              <a href="#"><li>Kampterreinen</li></a>
+              <a href="/kampterreinen"><li>Kampterreinen</li></a>
               <a href="/materiaal"><li>Materiaal</li></a>
               <a href="#" onclick="window.open('mailto:arne.duyver@student.uhasselt.be?Subject=Jeugdbeweging On Web: Support','','200','200');"><li>Info & Contact</li></a>
               <a href="https://www.uhasselt.be/" target="_blank"><li>Show me more</li></a>

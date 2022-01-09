@@ -1,6 +1,8 @@
+var portThema = 8088
+var baseUrl_ThemaAPI = "http://localhost:"
 function zoekThema() {
   var aantal = parseInt(document.getElementById("themazoeker_aantal").value);
-  axios.get("http://localhost:8088/api/themas/" + aantal, {
+  axios.get(baseUrl_ThemaAPI + portThema + "/api/themas/" + aantal, {
     method: 'GET',
     mode: 'no-cors'
   })
@@ -23,7 +25,7 @@ function zoekThema() {
 function opslaanThema() {
   var thema_text = String(document.getElementById("themazoeker_text").value);
   var id = "themazoeker_status";
-  axios.post("http://localhost:8088/api/themas", {
+  axios.post(baseUrl_ThemaAPI + portThema + "/api/themas", {
     method: 'POST',
     mode: 'no-cors',
     data: {
@@ -41,3 +43,5 @@ function opslaanThema() {
         console.log(error);
       })
 }
+
+//TODO function go to activiteiten met themas

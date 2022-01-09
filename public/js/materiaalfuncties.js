@@ -8,15 +8,47 @@ function makeHttpObject() {
 
   throw new Error("Could not create HTTP request object.");
 }
+var materiaalApiPort = 8000;
+var baseUrl_MateriaalAPI = "http://localhost:";
 
 //TODO
 function getTheUserName() {
   return "no_value_FOUND_usernaam"
 }
 
+function addRowHandlersMateriaal() {
+  var table = document.getElementById("materiaal_table");
+  var rows = table.getElementsByTagName("tr");
+
+  for (i = 0; i < rows.length; i++) {
+    var currentRow = table.rows[i];
+    currentRow.onclick = createClickHandler(currentRow);
+  }
+}
+
+var row_number_materiaal //TODO
+function createClickHandler(row) {
+  return function () {
+    var item = Materiaal_list[row.rowIndex - 1];
+    document.getElementById("materiaalhuren_materiaalnaam").value = item[0];
+    document.getElementById("materiaalterugbrengen_materiaalnaam").value = item[0];
+    document.getElementById("materiaaltoevoegen_materiaalnaam").value = item[0];
+
+    document.getElementById("materiaalhuren_locatienaam").value = item[1];
+    document.getElementById("materiaalterugbrengen_locatienaam").value = item[1];
+    document.getElementById("materiaaltoevoegen_locatienaam").value = item[1];
+
+    document.getElementById("materiaaltoevoegen_prijsperdag").value = item[2];
+    document.getElementById("materiaaltoevoegen_Contactinfo").value = item[3];
+    document.getElementById("materiaaltoevoegen_beschikbaar").value = item[4];
+    document.getElementById("materiaaltoevoegen_fotolink").value = item[5];
+  };
+}
+
 function zoekMateriaal() {
+  Materiaal_list = [];
   console.log("Hier moet de SOAP functie komen");
-  var port = 8000;
+  var port = materiaalApiPort;
 
   var naam = 'no_value_given_naam';
   var locatie = 'no_value_given_locatie';
@@ -49,7 +81,7 @@ function zoekMateriaal() {
     fotolink: fotolink,
     query: query
   };
-  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
+  fetch(baseUrl_MateriaalAPI + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
@@ -94,13 +126,13 @@ function vulMateriaalTabel(data) {
 
     });
     $('#materiaal_table').append(trHTML);
-    // addRowHandlersMateriaal() //TODO
+    addRowHandlersMateriaal();
   })
 }
 
 function huurMateriaal() {
   console.log("huurMateriaal pressed");
-  var port = 8000;
+  var port = materiaalApiPort;
 
   var naam = 'no_value_given_naam';
   var locatie = 'no_value_given_locatie';
@@ -133,7 +165,7 @@ function huurMateriaal() {
     fotolink: fotolink,
     query: query
   };
-  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
+  fetch(baseUrl_MateriaalAPI + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
@@ -149,7 +181,7 @@ function huurMateriaal() {
 
 function terugbrengenMateriaal() {
   console.log("terugbrengenMateriaal pressed");
-  var port = 8000;
+  var port = materiaalApiPort;
 
   var naam = 'no_value_given_naam';
   var locatie = 'no_value_given_locatie';
@@ -182,7 +214,7 @@ function terugbrengenMateriaal() {
     fotolink: fotolink,
     query: query
   };
-  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
+  fetch(baseUrl_MateriaalAPI + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
@@ -195,9 +227,9 @@ function terugbrengenMateriaal() {
     .catch(err => alert(err));
 }
 
-function toevoegenMateriaal() { //TODO
+function toevoegenMateriaal() {
   console.log("toevoegenMateriaal pressed");
-  var port = 8000;
+  var port = materiaalApiPort;
 
   var naam = 'no_value_given_naam';
   var locatie = 'no_value_given_locatie';
@@ -222,10 +254,10 @@ function toevoegenMateriaal() { //TODO
     contactinfo = document.getElementById("materiaaltoevoegen_Contactinfo").value;
   }
   if (document.getElementById("materiaaltoevoegen_beschikbaar").value != "") {
-    prijsperdag = parseInt(document.getElementById("materiaaltoevoegen_beschikbaar").value);
+    beschikbaar = parseInt(document.getElementById("materiaaltoevoegen_beschikbaar").value);
   }
   if (document.getElementById("materiaaltoevoegen_fotolink").value != "") {
-    contactinfo = document.getElementById("materiaaltoevoegen_fotolink").value;
+    fotolink = document.getElementById("materiaaltoevoegen_fotolink").value;
   }
 
 
@@ -242,8 +274,7 @@ function toevoegenMateriaal() { //TODO
     fotolink: fotolink,
     query: query
   };
-  console.log(content);
-  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
+  fetch(baseUrl_MateriaalAPI + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
@@ -258,7 +289,7 @@ function toevoegenMateriaal() { //TODO
 
 function toonGehuurdMateriaal() {
   console.log("toonGehuurdMateriaal pressed");
-  var port = 8000;
+  var port = materiaalApiPort;
 
   var naam = 'no_value_given_naam';
   var locatie = 'no_value_given_locatie';
@@ -283,7 +314,7 @@ function toonGehuurdMateriaal() {
     fotolink: fotolink,
     query: query
   };
-  fetch("http://localhost:" + port + "/SOAPpostXML.php", {
+  fetch(baseUrl_MateriaalAPI + port + "/SOAPpostXML.php", {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(content)
@@ -299,6 +330,7 @@ function toonGehuurdMateriaal() {
 var MateriaalGehuurd_list = [];
 
 function vulMateriaalGehuurdTabel(data) {
+  MateriaalGehuurd_list = [];
   $(document).ready(function () {
 
     $("#materiaalGehuurd_table tbody tr").remove();

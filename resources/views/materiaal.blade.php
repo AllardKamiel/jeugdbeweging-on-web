@@ -12,9 +12,9 @@
 @stop
 
 @section("content")
-<div style="margin-left: 100px;">
-  <h2>Hier kan je een lijst van meterialenbekijken om te huren, terug te brengen of te verhuren.</h2>
-  <a id="zoeken-anchor" ><h2>Lijst opvragen</h2></a>
+<h2 style="margin-left: 100px;">Hier kan je een lijst van materialen bekijken om te huren, terug te brengen of te verhuren.</h2>
+<div style="margin-left: 100px;margin-top: 12px;">
+  <a id="zoeken-anchor"><h2>Lijst opvragen</h2></a>
   <div style="margin-top: 12px;">
     <input  style="margin-top: 4px;" type="text" name="Materiaalnaam" id="materiaalzoeker_materiaalnaam" placeholder="Materiaalnaam" />
     <input  style="margin-top: 4px;" type="text" name="Locatienaam" id="materiaalzoeker_locatienaam" placeholder="Locatienaam" />
@@ -68,7 +68,7 @@
     <button style="margin-top: 4px; width: 100px;" type="button" onclick="toevoegenMateriaal()">toevoegen</button>
     <p id="materiaaltoevoegen_status" style="margin-top: 4px;">Status</p>
   </div>
-
+  <div style="margin-top: 24px;">
   <a id="toonGehuurd-anchor"><h2>Toon de items die je gehuurd hebt</h2></a>
   <button style="margin-top: 4px;" type="button" onclick="toonGehuurdMateriaal()">show</button>
   <div style="margin-top: 12px;">
@@ -82,6 +82,7 @@
       </thead>
     </table>
   </div>
+</div>
   <div style="margin-left: 50px;margin-top: 120%;">
     <p>The end of the page</p>
   </div>
