@@ -1,5 +1,5 @@
-var portThema = 8088
-var baseUrl_ThemaAPI = "http://localhost:"
+var portThema = ""//8088
+var baseUrl_ThemaAPI = "https://themaapi.kindeyeindustries.com"//"http://localhost:"
 function zoekThema() {
   var aantal = parseInt(document.getElementById("themazoeker_aantal").value);
   axios.get(baseUrl_ThemaAPI + portThema + "/api/themas/" + aantal, {

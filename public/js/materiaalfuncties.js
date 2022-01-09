@@ -8,6 +8,7 @@ function makeHttpObject() {
 
   throw new Error("Could not create HTTP request object.");
 }
+//TODO
 var materiaalApiPort = 8000;
 var baseUrl_MateriaalAPI = "http://localhost:";
 
@@ -26,7 +27,7 @@ function addRowHandlersMateriaal() {
   }
 }
 
-var row_number_materiaal //TODO
+var row_number_materiaal
 function createClickHandler(row) {
   return function () {
     var item = Materiaal_list[row.rowIndex - 1];

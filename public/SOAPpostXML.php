@@ -22,9 +22,10 @@ $query = $data['query'];
 
 $return = "";
 
-$port = "8054";
+// $port = "8054";
+// $url = "http://localhost:$port/SOAPMateriaal.asmx";
+$url = "https://materiaalapi.kindeyeindustries.com/SOAPMateriaal.asmx";
 
-$url = "http://localhost:$port/SOAPMateriaal.asmx";
 $client = new SoapClient($url);
 if($query == "getLijstMateriaal"){
   $msg = $client->getLijstMateriaal(array('naam'=>"$naam",'locatie'=>"$locatie",'beschikbaar'=>$beschikbaar));

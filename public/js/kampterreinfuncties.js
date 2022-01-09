@@ -1,11 +1,10 @@
 
-var portKampterrein = 8089
-var baseUrl_KampterreinAPI = "http://localhost:"
+var portKampterrein = ""//8089
+var baseUrl_KampterreinAPI = "https://kampterreinapi.kindeyeindustries.com"//"http://localhost:"
 
 function zoekKampterrein() {
   Kampterrein_list = [];
   console.log("zoekKampterrein clicked");
-  //TODO
   var kampterreinzoeker_type = document.getElementById("kampterreinzoeker_type").value;
   var locatie = "no_value_locatie";
   var maxprijs = 100000;
@@ -50,7 +49,6 @@ function vulKampterreinTabel(data) {
 }
 function wijzigKampterrein() {
   console.log("wijzigKampterrein clicked");
-  //TODO
   var type = document.getElementById("kampterreinwijzigen_type").value;
   var locatie = "no_value_locatie";
   var prijsperdag = -1;
