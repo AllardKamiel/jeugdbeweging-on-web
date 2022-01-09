@@ -1,5 +1,9 @@
 var Activity_list = [];
 
+var activiteitenApiPort = "";//5001;
+var baseUrl_activiteitenAPI = "http://activiteitapi.kindeyeindustries.com";//"http://localhost:";
+
+
 function zoekActiviteit() {
   var title = document.getElementById("zoekActiviteit_title").value;
   if (title == "") {
@@ -15,7 +19,7 @@ function zoekActiviteit() {
   var pers_min = parseInt(document.getElementById("zoekActiviteit_pers_min").value);
   var pers_max = parseInt(document.getElementById("zoekActiviteit_pers_max").value);
 
-  var service = "http://localhost:5000/api/";
+  var service = baseUrl_activiteitenAPI + activiteitenApiPort + "/api/";
   $(document).ready(function () {
 
     jQuery.support.cors = true;
@@ -109,7 +113,7 @@ function createClickHandler(row) {
 
 
 function ActiviteitDetail() {
-  var page = 'http://127.0.0.1:8000/activiteit_detail';
+  var page = 'http://127.0.0.1:' + laravelapplicatieport + '/activiteit_detail';
   window.open(page, "_blank").focus();
 }
 
@@ -169,7 +173,7 @@ function voegToeActiviteit() {
   jQuery.support.cors = true;
   $.ajax({
     type: "POST",
-    url: "http://localhost:5000/api/activity",
+    url: baseUrl_activiteitenAPI + activiteitenApiPort + "/api/activity",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify(json),
     contentType: "application/json;",

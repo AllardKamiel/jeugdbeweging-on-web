@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 //use App\Models\<Modelnaam>;
 //Voor SOAP
@@ -18,8 +18,9 @@ class MateriaalController extends Controller
     */
     public function show()
     {
-        $materiaalnaam = "schop";
-        return view("materiaal")->with("materiaalnaam", $materiaalnaam);
+        $user = Auth::user();
+        $userName = $user->name;
+        return view("materiaal")->with("usernaam", $userName);
     }
     public function showMateriaal($materiaalnaam)
     {

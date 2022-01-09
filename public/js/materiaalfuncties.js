@@ -12,9 +12,10 @@ function makeHttpObject() {
 var materiaalApiPort = 8000;
 var baseUrl_MateriaalAPI = "http://localhost:";
 
-//TODO
+
 function getTheUserName() {
-  return "no_value_FOUND_usernaam"
+  var naam = document.getElementById("materiaal_usernaam").innerHTML;
+  return naam;
 }
 
 function addRowHandlersMateriaal() {
@@ -23,12 +24,12 @@ function addRowHandlersMateriaal() {
 
   for (i = 0; i < rows.length; i++) {
     var currentRow = table.rows[i];
-    currentRow.onclick = createClickHandler(currentRow);
+    currentRow.onclick = createClickHandlerMateriaal(currentRow);
   }
 }
 
 var row_number_materiaal
-function createClickHandler(row) {
+function createClickHandlerMateriaal(row) {
   return function () {
     var item = Materiaal_list[row.rowIndex - 1];
     document.getElementById("materiaalhuren_materiaalnaam").value = item[0];
@@ -69,7 +70,7 @@ function zoekMateriaal() {
   }
   beschikbaar = parseInt(document.getElementById("materiaalzoeker_beschikbaar").value);
 
-  username = getTheUserName();
+  usernaam = getTheUserName();
 
   let content = {
     naam: naam,
@@ -153,7 +154,7 @@ function huurMateriaal() {
   }
   aantal = parseInt(document.getElementById("materiaalhuren_aantal").value);
 
-  username = getTheUserName();
+  usernaam = getTheUserName();
 
   let content = {
     naam: naam,
@@ -202,7 +203,7 @@ function terugbrengenMateriaal() {
   }
   aantal = parseInt(document.getElementById("materiaalterugbrengen_aantal").value);
 
-  username = getTheUserName();
+  usernaam = getTheUserName();
 
   let content = {
     naam: naam,
@@ -262,7 +263,7 @@ function toevoegenMateriaal() {
   }
 
 
-  username = getTheUserName();
+  usernaam = getTheUserName();
 
   let content = {
     naam: naam,
@@ -302,7 +303,7 @@ function toonGehuurdMateriaal() {
   var aantal = -3;
   var query = 'toonGehuurdMateriaal';
 
-  username = getTheUserName();
+  usernaam = getTheUserName();
 
   let content = {
     naam: naam,

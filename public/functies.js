@@ -7,7 +7,9 @@ function toggleBtn() {
 function setStatus(id, msg) {
   document.getElementById(id).innerHTML = msg;
 }
-
+var laravelapplicatieport = 8000;
+var activiteitenCalenderApiPort = "";//5000;
+var baseUrl_activiteitenCalenderAPI = "http://calenderapi.kindeyeindustries.com";//"http://localhost:";
 
 function zoekActiviteitCalender() {
   var title = document.getElementById("zoekActiviteitCalender_title").value;
@@ -28,15 +30,14 @@ function zoekActiviteitCalender() {
   }
 
 
-  var service = "http://localhost:5000/api/";
+  var service = baseUrl_activiteitenCalenderAPI + activiteitenCalenderApiPort + "/api/";
   $(document).ready(function () {
-
     jQuery.support.cors = true;
 
     $.ajax(
       {
         type: "GET",
-        url: service + "activity/read/" + title + "/" + date + "/" + group + "/" + sub_group ,
+        url: service + "activity/read/" + title + "/" + date + "/" + group + "/" + sub_group,
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -77,14 +78,13 @@ function voegToeActiviteitCalender() {
     "end_hour": end_hour,
     "group": group,
     "start_hour": start_hour,
-    "sub_group": sub_group ,
+    "sub_group": sub_group,
     "title": titel
   }
-
   jQuery.support.cors = true;
   $.ajax({
     type: "POST",
-    url: "http://localhost:5000/api/activity_calender",
+    url: baseUrl_activiteitenCalenderAPI + activiteitenCalenderApiPort + "/api/activity_calender",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify(json),
     contentType: "application/json;",

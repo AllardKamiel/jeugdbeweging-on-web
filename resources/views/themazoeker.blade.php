@@ -16,6 +16,7 @@
     <input  style="margin-top: 4px;" type="number" name="aantal" id="themazoeker_aantal" value="2" />
     <button style="margin-top: 4px;" type="button" onclick="zoekThema()">zoek</button>
     <p id="themazoeker_result" style="color: red;margin-top: 4px;">Hier komen de themas tevoorschijn!</p>
+    <button style="margin-top: 4px;width: 200px;visibility: hidden;" type="button" id="themazoeker_acti_btn" onclick="zoekActiviteitThema()">zoek activiteit met thema 1</button>
   </div>
 </div>
 <div style="margin-left: 100px;margin-top: 50px;">

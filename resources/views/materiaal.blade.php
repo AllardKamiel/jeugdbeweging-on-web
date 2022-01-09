@@ -13,6 +13,7 @@
 
 @section("content")
 <h2 style="margin-left: 100px;">Hier kan je een lijst van materialen bekijken om te huren, terug te brengen of te verhuren.</h2>
+<p hidden id="materiaal_usernaam">{{$usernaam}}</p>
 <div style="margin-left: 100px;margin-top: 12px;">
   <a id="zoeken-anchor"><h2>Lijst opvragen</h2></a>
   <div style="margin-top: 12px;">
