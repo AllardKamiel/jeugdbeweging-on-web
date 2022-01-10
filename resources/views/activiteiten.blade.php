@@ -30,6 +30,7 @@
     <p>maximum aantal personen</p>
     <input  style="margin-top: 4px;" type="number" name="pers_max" id="zoekActiviteit_pers_max" value="100" /><br>
     <button style="margin-top: 4px;" type="button" onclick="zoekActiviteit()">zoek</button>
+    <button style="margin-top: 4px;width:100px;" type="button" onclick="zoekActiviteitOpweer()">zoek op weer</button>
 
     <table id="activiteit_table" class="center">
         <thead>

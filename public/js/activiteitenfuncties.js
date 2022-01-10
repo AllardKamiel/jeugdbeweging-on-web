@@ -3,16 +3,42 @@ var Activity_list = [];
 var activiteitenApiPort = "";//5001;
 var baseUrl_activiteitenAPI = "http://activiteitapi.kindeyeindustries.com";//"http://localhost:";
 
+function zoekActiviteitOpweer() {
+  jQuery.support.cors = true;
 
-function zoekActiviteit() {
+  $.ajax(
+    {
+      type: "GET",
+      url: "http://api.openweathermap.org/data/2.5/forecast?q=diepenbeek&appid=82d2feca0d3e9673a9f1cd037b9ea810",
+      cache: false,
+      success: function (data) {
+        weer = data["list"][0]["weather"]["0"]["main"];
+        var settingbyweer = 'beide';
+        console.log(weer);
+        if (weer == "Rain") {
+          settingbyweer = "binnen";
+        } else if (weer == "Clouds") {
+          settingbyweer = "beide";
+        } else if (weer == "Clear") {
+          settingbyweer = "buiten";
+        }
+        zoekActiviteit(settingbyweer)
+      }
+    });
+}
+
+function zoekActiviteit(settingbyweer) {
+
   var title = document.getElementById("zoekActiviteit_title").value;
   if (title == "") {
     title = "Null"
   }
-  var thema_tag = document.getElementById("zoekActiviteit_thema_tag").value;
-  if (thema_tag == "") {
-    thema_tag = "Null"
-  }
+  if (typeof settingbyweer == "undefined") {
+    var thema_tag = document.getElementById("zoekActiviteit_thema_tag").value;
+    if (thema_tag == "") {
+      thema_tag = "Null"
+    }
+  } else { thema_tag = settingbyweer; }
   var setting_tag = document.getElementById("zoekActiviteit_setting_tag").value;
   var age_min = parseInt(document.getElementById("zoekActiviteit_age_min").value);
   var age_max = parseInt(document.getElementById("zoekActiviteit_age_max").value);
