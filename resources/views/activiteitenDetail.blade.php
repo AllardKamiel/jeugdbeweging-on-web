@@ -7,6 +7,7 @@
 <div style="margin-left: 50px;">
   <h1>Activiteit detail &#128512;</h1>
   <div style="margin-top: 30px;">
+  <p hidden id="activiteit_detail_usernaam">{{$usernaam}}</p>
   <p id="titel"></p>
   <p id="duration"></p>
   <p id="age_min">Hello World!</p>

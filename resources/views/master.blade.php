@@ -12,6 +12,9 @@
   <script type="text/javascript" src="{{ asset('js/kampterreinfuncties.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/themafuncties.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/materiaalfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/ratingfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.soap.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.format.js') }}"></script>
   <link rel="shortcut icon" href="{{ asset('images/logo2small.png') }}" />
   <style>
     th, td {

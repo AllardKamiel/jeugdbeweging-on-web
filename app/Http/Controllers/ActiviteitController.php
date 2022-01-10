@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActiviteitController extends Controller
 {
@@ -17,12 +18,16 @@ class ActiviteitController extends Controller
         public function showActiviteit()
         {
             //print("dit is de test voor Activiteit");
-            return view('activiteiten');
+            $user = Auth::user();
+            $userName = $user->name;
+            return view('activiteiten')->with("usernaam", $userName);
         }
         public function showActiviteitDetail()
         {
             //print("dit is de test voor Activiteit");
-            return view('activiteitenDetail');
+            $user = Auth::user();
+            $userName = $user->name;
+            return view('activiteitenDetail')->with("usernaam", $userName);
         }
         public function showActiviteitVoegToe()
         {
