@@ -139,7 +139,9 @@ function createClickHandler(row) {
 
 
 function ActiviteitDetail() {
-  var page = 'http://127.0.0.1:' + laravelapplicatieport + '/activiteit_detail';
+  var url = window.location.origin;
+  var page = url + '/activiteit_detail';
+  //var page = 'http://127.0.0.1:' + laravelapplicatieport + '/activiteit_detail'; //TODO fixed it i think
   window.open(page, "_blank").focus();
 }
 

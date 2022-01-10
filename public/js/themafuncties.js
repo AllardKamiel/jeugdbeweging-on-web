@@ -49,7 +49,9 @@ function zoekActiviteitThema() {
   var text = document.getElementById("themazoeker_result").innerHTML;
   var hetThema = text.split(",")[0];
   localStorage.setItem("thema", JSON.stringify(hetThema));
-  var page = 'http://127.0.0.1:' + laravelapplicatieport + '/activiteit';
+  var url = window.location.origin;
+  var page = url + '/activiteit';
+  //var page = 'http://127.0.0.1:' + laravelapplicatieport + '/activiteit'; //TODO: fixed it i think
   //window.open(page, "_blank").focus();
   location.replace(page);
 }
