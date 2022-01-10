@@ -8,9 +8,9 @@ function makeHttpObject() {
 
   throw new Error("Could not create HTTP request object.");
 }
-//TODO
-var materiaalApiPort = 8000;
-var baseUrl_MateriaalAPI = "http://localhost:";
+//TODO fixed it i think
+var materiaalApiPort = ""//8000;
+var baseUrl_MateriaalAPI = window.location.origin;//"http://localhost:";
 
 
 function getTheUserName() {
