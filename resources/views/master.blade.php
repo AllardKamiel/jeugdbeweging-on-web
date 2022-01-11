@@ -4,18 +4,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JOW - @yield('subtitle')</title>
   {{-- <link rel="stylesheet" href="css/style.css"> --}}
-  <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{asset('css/style.css') }}">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ URL::asset('functies.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/activiteitenfuncties.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/kampterreinfuncties.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/themafuncties.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/materiaalfuncties.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/ratingfuncties.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/jquery.soap.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/jquery.format.js') }}"></script>
-  <link rel="shortcut icon" href="{{ URL::asset('images/logo2small.png') }}" />
+  <script type="text/javascript" src="{{asset('functies.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/activiteitenfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/kampterreinfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/themafuncties.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/materiaalfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/ratingfuncties.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.soap.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.format.js') }}"></script>
+  <link rel="shortcut icon" href="{{asset('images/logo2small.png') }}" />
   <style>
     th, td {
     background-color: #00986f;
@@ -69,7 +69,7 @@
         </nav>
       </div>
       {{-- END menu --}}
-      <img src="{{ URL::asset('images/logo2.png') }}" class="logo-img"> {{-- source img: https://www.youth-movement.org --}}
+      <img src="{{asset('images/logo2.png') }}" class="logo-img"> {{-- source img: https://www.youth-movement.org --}}
       @yield("tab_headers")
     </nav>
     @yield("content")
