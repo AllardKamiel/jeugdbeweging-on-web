@@ -7,6 +7,7 @@
   <li><a href="#huren-anchor">Huren</a></li>
   <li><a href="#brengtrg-anchor">Terugbrengen</a></li>
   <li><a href="#voegtoe-anchor">Toevoegen</a></li>
+  <li><a href="#rateMateriaal-anchor">Rate</a></li>
   <li><a href="#toonGehuurd-anchor">Toon gehuurd</a></li>
 </ul>
 @stop
@@ -16,6 +17,7 @@
 <p hidden id="materiaal_usernaam">{{$usernaam}}</p>
 <div style="margin-left: 100px;margin-top: 12px;">
   <a id="zoeken-anchor"><h2>Lijst opvragen</h2></a>
+  <div style="margin-top: 12px;" id="materiaalitem_rating">Hier komt de gemiddelde rating van het geselecteerde item</div>
   <div style="margin-top: 12px;">
     <input  style="margin-top: 4px;" type="text" name="Materiaalnaam" id="materiaalzoeker_materiaalnaam" placeholder="Materiaalnaam" />
     <input  style="margin-top: 4px;" type="text" name="Locatienaam" id="materiaalzoeker_locatienaam" placeholder="Locatienaam" />
@@ -69,6 +71,26 @@
     <button style="margin-top: 4px; width: 100px;" type="button" onclick="toevoegenMateriaal()">toevoegen</button>
     <p id="materiaaltoevoegen_status" style="margin-top: 4px;">Status</p>
   </div>
+
+  <div style="margin-top: 24px;">
+    <a id="rateMateriaal-anchor"><h2>Rate een item</h2></a>
+    <div style="margin-top: 12px;">
+      <input  style="margin-top: 4px;" type="text" name="Materiaalnaam" id="materiaalrating_materiaalnaam" placeholder="Materiaalnaam" />
+      <input  style="margin-top: 4px;" type="text" name="Locatienaam" id="materiaalrating_locatienaam" placeholder="Locatienaam" />
+      <select  style="margin-top: 4px;" name="rating_select_materiaal" id="rating_select_materiaal">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br>
+      <button style="margin-top: 4px; width: 100px;" type="button" onclick="rateMateriaal()">rate</button>
+      <button style="margin-top: 4px; width: 100px;" type="button" onclick="deleteRateMateriaal()">delete</button>
+      <p id="materiaalrating_status" style="margin-top: 4px;">Status</p>
+    </div>
+  </div>
+  
   <div style="margin-top: 24px;">
   <a id="toonGehuurd-anchor"><h2>Toon de items die je gehuurd hebt</h2></a>
   <button style="margin-top: 4px;" type="button" onclick="toonGehuurdMateriaal()">show</button>

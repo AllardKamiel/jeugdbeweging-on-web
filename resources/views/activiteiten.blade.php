@@ -33,7 +33,7 @@
     <button style="margin-top: 4px;" type="button" onclick="zoekActiviteit()">zoek</button>
     <button style="margin-top: 4px;width:100px;" type="button" onclick="zoekActiviteitOpweer()">zoek op weer</button>
 
-    <button style="margin-top: 4px;width:100px;" type="button" onclick="setRating(1)">get rating test</button>
+    <button hidden style="margin-top: 4px;width:100px;" type="button" onclick="setRating(1)">get rating test</button>
 
     <table id="activiteit_table" class="center">
         <thead>

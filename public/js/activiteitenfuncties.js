@@ -49,7 +49,6 @@ function zoekActiviteit(settingbyweer) {
   $(document).ready(function () {
 
     jQuery.support.cors = true;
-
     $.ajax(
       {
         type: "GET",
@@ -57,6 +56,7 @@ function zoekActiviteit(settingbyweer) {
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
+        headers: { 'X-API-KEY': "asdf1234567890" },
         cache: false,
         success: function (data) {
           $("#activiteit_table tbody tr").remove();
@@ -205,6 +205,7 @@ function voegToeActiviteit() {
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify(json),
     contentType: "application/json;",
+    headers: { 'X-API-KEY': "asdf1234567890" },
     dataType: "json",
     success: function (data) { alert(data); },
     error: function (errMsg) {

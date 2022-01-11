@@ -23,27 +23,27 @@ $return = "";
 // $url = "http://localhost:$port/SOAPMateriaal.asmx";
 
 
-$url = "http://localhost:8060/SOAPRating.asmx";
-
+$url = "http://ratingapi.kindeyeindustries.com/SOAPRating.asmx";
 $client = new SoapClient($url);
 
-
-$params = array(
-    "score" => $contact,
-    "userId" => "test",
-    "itemSource" => "test",
-    "itemId" => "test",
-  );
-
-if($query == "voegRatingToe"){
-    // $msg = $client->__getFunctions();
-    $msg = $client->voegRatingToe(array('score'=>"$score",'userId'=>"$userId",'itemSource'=>"$itemSource",'itemId'=>"$itemId"));
-    // $msg = $client->voegRatingToe(array('score'=>"$score",'userId'=>"$userId",'itemSource'=>"$itemSource", 'itemId'=>"$itemId"));
-    // $jsonResult = $msg->voegRatingToeResult;
+try
+{
+  if($query == "voegRatingToe"){
+      $msg = $client->voegRatingToe(array('score'=>$score,'userId'=>"$userId",'itemSource'=>"$itemSource",'itemId'=>"$itemId"));
+      $jsonResult = $msg->voegRatingToeResult;
   }
-
-$return= $msg;
-
+  if($query == "getRating"){
+    $msg = $client->getRating(array('itemSource'=>"$itemSource",'itemId'=>"$itemId"));
+    $jsonResult = $msg->getRatingResult;
+  }
+  if($query == "deleteRating"){
+    $msg = $client->deleteRating(array('userId'=>"$userId",'itemSource'=>"$itemSource",'itemId'=>"$itemId"));
+    $jsonResult = $msg->deleteRatingResult;
+  }
+}catch(SoapFault $client){
+  $jsonResult = $client->__toString();
+}
+$return= $jsonResult;
 
 $result = ["uitkomst" => $return];
 print(json_encode($result));

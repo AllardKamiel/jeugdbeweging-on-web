@@ -35,15 +35,20 @@ function createClickHandlerMateriaal(row) {
     document.getElementById("materiaalhuren_materiaalnaam").value = item[0];
     document.getElementById("materiaalterugbrengen_materiaalnaam").value = item[0];
     document.getElementById("materiaaltoevoegen_materiaalnaam").value = item[0];
+    document.getElementById("materiaalrating_materiaalnaam").value = item[0];
 
     document.getElementById("materiaalhuren_locatienaam").value = item[1];
     document.getElementById("materiaalterugbrengen_locatienaam").value = item[1];
     document.getElementById("materiaaltoevoegen_locatienaam").value = item[1];
+    document.getElementById("materiaalrating_locatienaam").value = item[1];
 
     document.getElementById("materiaaltoevoegen_prijsperdag").value = item[2];
     document.getElementById("materiaaltoevoegen_Contactinfo").value = item[3];
     document.getElementById("materiaaltoevoegen_beschikbaar").value = item[4];
     document.getElementById("materiaaltoevoegen_fotolink").value = item[5];
+
+    var ratingstr = item[0] + " van " + item[1] + " heeft een gemiddelde rating van ";
+    getRating(getTheUserName(), 0, (item[0] + " - " + item[1]), ratingstr);
   };
 }
 
@@ -357,5 +362,24 @@ function vulMateriaalGehuurdTabel(data) {
     });
     $('#materiaalGehuurd_table').append(trHTML);
   })
-
 };
+
+function rateMateriaal() {
+  var id = ""
+  var rating = document.getElementById("rating_select_materiaal").value;
+  console.log(rating)
+  if (document.getElementById("materiaalrating_materiaalnaam").value == "") {
+    addRating(rating, getTheUserName(), 0, "");
+  }
+  else if (document.getElementById("materiaalrating_locatienaam").value == "") {
+    addRating(rating, getTheUserName(), 0, "");
+  } else {
+    id = document.getElementById("materiaalrating_materiaalnaam").value + " - " + document.getElementById("materiaalrating_locatienaam").value;
+    addRating(rating, getTheUserName(), 0, id);
+  }
+}
+
+function deleteRateMateriaal() {
+  var id = document.getElementById("materiaalrating_materiaalnaam").value + " - " + document.getElementById("materiaalrating_locatienaam").value;
+  deleteRating(getTheUserName(), 0, id)
+}
