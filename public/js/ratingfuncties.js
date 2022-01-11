@@ -128,6 +128,7 @@ function deleteRating(userIdinput, itemSourceinputInt, itemIdinput) {
             console.log(data);
             //TODO set both ratingstatus elements to the rating
             //
+            document.getElementById("materiaalrating_status").innerHTML = data;
         })
         .catch(err => console.log(err));
 }
