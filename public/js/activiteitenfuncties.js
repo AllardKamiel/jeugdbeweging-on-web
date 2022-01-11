@@ -3,6 +3,12 @@ var Activity_list = [];
 var activiteitenApiPort = "";//5001;
 var baseUrl_activiteitenAPI = "http://activiteitapi.kindeyeindustries.com";//"http://localhost:";
 
+
+function getTheUserNameActiviteit() {
+  var naam = document.getElementById("activiteit_detail_usernaam").innerHTML;
+  return naam;
+}
+
 function zoekActiviteitOpweer() {
   jQuery.support.cors = true;
 
@@ -28,7 +34,8 @@ function zoekActiviteitOpweer() {
 }
 
 function zoekActiviteit(settingbyweer) {
-
+  localStorage.clear();
+  Activity_list = [];
   var title = document.getElementById("zoekActiviteit_title").value;
   if (title == "") {
     title = "Null"
@@ -133,6 +140,7 @@ function createClickHandler(row) {
   return function () {
     row_number = row.rowIndex;
     localStorage.setItem("row", JSON.stringify(row_number));
+    console.log(row_number);
     ActiviteitDetail();
   };
 }
@@ -148,7 +156,10 @@ function ActiviteitDetail() {
 
 function fillActiviteitDetail() {
   var activities = JSON.parse(localStorage.getItem("activities"));
+  console.log(activities);
   var row = JSON.parse(localStorage.getItem("row"));
+  console.log(row);
+  document.getElementById("activiteitId").innerHTML = activities[row - 1][0];
   document.getElementById("titel").innerHTML = "titel:" + activities[row - 1][1];
   document.getElementById("duration").innerHTML = "duration:" + activities[row - 1][3] + "min";
   document.getElementById("age_min").innerHTML = "minimum leeftijd:" + activities[row - 1][4]
@@ -163,7 +174,7 @@ function fillActiviteitDetail() {
   document.getElementById("extra_assets").innerHTML = "extra_assets:" + activities[row - 1][14]
   document.getElementById("matriaallijst").innerHTML = "matriaallijst:" + activities[row - 1][8]
   document.getElementById("beschrijving").innerHTML = "beschrijving:" + activities[row - 1][2]
-
+  setRatingActiviteit()
 }
 function voegToeActiviteit() {
   titel = document.getElementById("voegToeActiviteit_title").value
@@ -212,4 +223,23 @@ function voegToeActiviteit() {
       alert(errMsg);
     }
   });
+}
+
+function rateActiviteit()
+{
+  var id = "";
+  var rating = document.getElementById("rating_select_activiteit").value;
+  var activities = JSON.parse(localStorage.getItem("activities"));
+  var row = JSON.parse(localStorage.getItem("row"));
+  id = activities[row - 1][0];
+  addRatingActiviteit(rating, getTheUserNameActiviteit(), 1, id);
+  setRatingActiviteit()
+}
+
+function setRatingActiviteit()
+{
+  var activities = JSON.parse(localStorage.getItem("activities"));
+  var row = JSON.parse(localStorage.getItem("row"));
+  id = activities[row - 1][0];
+  getRatingActiviteit(getTheUserNameActiviteit(), 1, id,"rating:")
 }
